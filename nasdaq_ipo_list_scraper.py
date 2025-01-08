@@ -37,7 +37,7 @@ for container in containers:
             data_price.append(row_data)
 
     df_priced = pd.DataFrame(data_price[1:], columns=data_price[0])  # Skipping the first row as it contains headers
-    df_priced = pd.concat([ipo_priced, df_priced], ignore_index=True)
+    df_priced = pd.concat([df_priced, ipo_priced], ignore_index=True)
     df_priced['Company Name'] = df_priced['Company Name'].fillna('')
     df_priced = df_priced.drop_duplicates(subset=['Company Name'], keep='last')
     print(df_priced)
@@ -63,7 +63,7 @@ for container in containers:
             data_upcoming.append(row_data)
 
     df_upcoming = pd.DataFrame(data_upcoming[1:], columns=data_upcoming[0])  # Skipping the first row as it contains headers
-    df_upcoming = pd.concat([ipo_upcoming, df_upcoming], ignore_index=True)
+    df_upcoming = pd.concat([df_upcoming, ipo_upcoming], ignore_index=True)
     df_upcoming['Company Name'] = df_upcoming['Company Name'].fillna('')
     df_upcoming = df_upcoming.drop_duplicates(subset=['Company Name'], keep='last')
     print(df_upcoming)
@@ -89,7 +89,7 @@ for container in containers:
             data_filings.append(row_data)
 
     df_filings = pd.DataFrame(data_filings[1:], columns=data_filings[0])  # Skipping the first row as it contains headers
-    df_filings = pd.concat([ipo_filings, df_filings], ignore_index=True)
+    df_filings = pd.concat([df_filings, ipo_filings], ignore_index=True)
     df_filings['Company Name'] = df_filings['Company Name'].fillna('')
     df_filings = df_filings.drop_duplicates(subset=['Company Name'], keep='last')
     print(df_filings)
@@ -115,7 +115,7 @@ for container in containers:
             data_withdrawn.append(row_data)
 
     df_withdrawn = pd.DataFrame(data_withdrawn[1:], columns=data_withdrawn[0])  # Skipping the first row as it contains headers
-    df_withdrawn = pd.concat([ipo_withdrawn, df_withdrawn], ignore_index=True)
+    df_withdrawn = pd.concat([df_withdrawn, ipo_withdrawn], ignore_index=True)
     df_withdrawn['Company Name'] = df_withdrawn['Company Name'].fillna('')
     df_withdrawn = df_withdrawn.drop_duplicates(subset=['Company Name'], keep='last')
     print(df_withdrawn)
